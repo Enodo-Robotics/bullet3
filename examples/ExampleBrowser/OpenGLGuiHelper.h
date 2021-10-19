@@ -2,14 +2,18 @@
 #define OPENGL_GUI_HELPER_H
 #include "../CommonInterfaces/CommonGUIHelperInterface.h"
 
+#include <map>
 class btCollisionShape;
 class btTransform;
 #include "LinearMath/btAlignedObjectArray.h"
+#include "LinearMath/btVector3.h"
+
 #include "../OpenGLWindow/GLInstanceGraphicsShape.h"
 
 struct OpenGLGuiHelper : public GUIHelperInterface
 {
 	struct OpenGLGuiHelperInternalData* m_data;
+	std::map<int, btVector4> m_colorMap;
 
 	OpenGLGuiHelper(struct CommonGraphicsApp* glApp, bool useOpenGL2);
 

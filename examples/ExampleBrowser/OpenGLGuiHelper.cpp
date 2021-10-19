@@ -1478,7 +1478,15 @@ void OpenGLGuiHelper::autogenerateGraphicsObjects(btDiscreteDynamicsWorld* rbWor
 		int colorIndex = colObj->getBroadphaseHandle()->getUid() & 3;
 
 		btVector4 color;
-		color = sColors[colorIndex];
+		auto it = m_colorMap.find(colObj->getUserIndex2());
+		if (it != m_colorMap.end())
+		{
+			color = it->second;
+		}
+		else
+		{
+			color = sColors[colorIndex];
+		}
 		if (colObj->getCollisionShape()->getShapeType() == STATIC_PLANE_PROXYTYPE)
 		{
 			color.setValue(1, 1, 1, 1);
