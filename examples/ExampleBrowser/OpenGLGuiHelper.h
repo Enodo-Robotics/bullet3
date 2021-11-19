@@ -2,7 +2,7 @@
 #define OPENGL_GUI_HELPER_H
 #include "../CommonInterfaces/CommonGUIHelperInterface.h"
 
-#include <map>
+#include <unordered_map>
 class btCollisionShape;
 class btTransform;
 #include "LinearMath/btAlignedObjectArray.h"
@@ -13,7 +13,7 @@ class btTransform;
 struct OpenGLGuiHelper : public GUIHelperInterface
 {
 	struct OpenGLGuiHelperInternalData* m_data;
-	std::map<int, btVector4> m_colorMap;
+	std::unordered_map<int, btVector4> m_colorMap;
 
 	OpenGLGuiHelper(struct CommonGraphicsApp* glApp, bool useOpenGL2);
 

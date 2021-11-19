@@ -87,6 +87,7 @@ public:
 		drawLine(PointOnB, PointOnB + normalOnB * distance, color);
 		btVector3 ncolor(0, 0, 0);
 		drawLine(PointOnB, PointOnB + normalOnB * 0.01, ncolor);
+		drawSphere(PointOnB, 0.02, ncolor);
 	}
 
 	virtual void reportErrorWarning(const char* warningString)
